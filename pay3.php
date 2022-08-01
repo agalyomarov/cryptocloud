@@ -14,13 +14,14 @@ require_once "config.php";
 use GuzzleHttp\Client;
 
 $next = "pay4.php";
+$prev = "pay2.php";
 $page = 3;
 $prev_page = 2;
 $sum = $sum_3;
 if (isset($_SESSION['uuid'])) {
     $uuid = $_SESSION['uuid'];
 } else {
-    header('Location:/');
+    header('Location:' . $prev);
     die();
 }
 $client = new Client;
@@ -29,7 +30,7 @@ $query = "SELECT * FROM `payments` where user_id = '$uuid' and page = $prev_page
 $result = $mysqli->query($query);
 $row = $result->fetch_assoc();
 if (!$row || $row['status'] != 'paid') {
-    header('Location:/');
+    header('Location:' . $prev);
     die();
 }
 $query = "SELECT * FROM `payments` where user_id = '$uuid' and page = $page";
