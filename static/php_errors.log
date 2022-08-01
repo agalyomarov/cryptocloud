@@ -14,3 +14,8 @@ Stack trace:
 #0 /Users/agaly/Downloads/payment/static/static.php(65): ceil(1.3333333333333, 0)
 #1 {main}
   thrown in /Users/agaly/Downloads/payment/static/static.php on line 65
+[01-Aug-2022 23:27:44 UTC] PHP Warning:  Undefined array key "count" in /Users/agaly/Downloads/payment/static/static.php on line 36
+[01-Aug-2022 23:27:44 UTC] PHP Warning:  Undefined array key "sum" in /Users/agaly/Downloads/payment/static/static.php on line 37
+[01-Aug-2022 23:27:44 UTC] PHP Warning:  Undefined array key "count" in /Users/agaly/Downloads/payment/static/static.php on line 66
+[01-Aug-2022 23:28:11 UTC] PHP Warning:  Undefined array key "count" in /Users/agaly/Downloads/payment/static/static.php on line 66
+[01-Aug-2022 23:28:19 UTC] PHP Warning:  Undefined array key "count" in /Users/agaly/Downloads/payment/static/static.php on line 66

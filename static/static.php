@@ -8,11 +8,14 @@ if (isset($_GET['page'])) {
    $current_page = $_GET['page'];
 }
 $start = ($elements * $current_page) - $elements;
-$query = "SELECT SUM(`sum`) AS `sum`, COUNT('id') AS `count`  FROM `payments`";
+$query = "SELECT SUM(`sum`) AS `sum` FROM `payments` WHERE `status` = 'paid'";
+$query3 = "SELECT COUNT('id') AS `count`  FROM `payments`";
 $query2 = "SELECT *  FROM `payments` LIMIT $start , $elements";
 $result = $mysqli->query($query);
+$result3 = $mysqli->query($query3);
 $result2 = $mysqli->query($query2);
 $row = $result->fetch_assoc();
+$row3 = $result3->fetch_assoc();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -30,8 +33,8 @@ $row = $result->fetch_assoc();
    <div class="container">
       <div class="row">
          <div class="col-12">
-            <h3>Переходы по домену : <?= $row["count"] ?></h3>
-            <h3>Обшая сумма : <?= $row["sum"] ?> $</h3>
+            <h3>Переходы по домену : <?= $row3["count"] ?></h3>
+            <h3>Обшая сумма : <?= $row["sum"]  ?> $</h3>
             <table class="table mt-4">
                <thead>
                   <tr>
@@ -60,8 +63,8 @@ $row = $result->fetch_assoc();
                </tbody>
             </table>
             <?php
-            if ($row['count'] > 20) :
-               $count = $row['count'];
+            if ($row3['count'] > 20) :
+               $count = $row3['count'];
                $pages = ceil($count / 20);
                var_dump($pages);
             ?>
