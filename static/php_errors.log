@@ -1,0 +1,16 @@
+[01-Aug-2022 21:23:34 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '* FROM `payments`' at line 1 in /Users/agaly/Downloads/payment/static/static.php:7
+Stack trace:
+#0 /Users/agaly/Downloads/payment/static/static.php(7): mysqli->query('SELECT SUM(`sum...')
+#1 {main}
+  thrown in /Users/agaly/Downloads/payment/static/static.php on line 7
+[01-Aug-2022 21:28:04 UTC] PHP Warning:  Undefined array key "id" in /Users/agaly/Downloads/payment/static/static.php on line 45
+[01-Aug-2022 21:28:04 UTC] PHP Warning:  Undefined array key "user_id" in /Users/agaly/Downloads/payment/static/static.php on line 46
+[01-Aug-2022 21:28:04 UTC] PHP Warning:  Undefined array key "page" in /Users/agaly/Downloads/payment/static/static.php on line 47
+[01-Aug-2022 21:28:04 UTC] PHP Warning:  Undefined array key "url" in /Users/agaly/Downloads/payment/static/static.php on line 48
+[01-Aug-2022 21:28:37 UTC] PHP Warning:  Undefined array key "url" in /Users/agaly/Downloads/payment/static/static.php on line 48
+[01-Aug-2022 21:38:27 UTC] PHP Warning:  Undefined variable $page in /Users/agaly/Downloads/payment/static/static.php on line 60
+[01-Aug-2022 21:47:51 UTC] PHP Fatal error:  Uncaught ArgumentCountError: ceil() expects exactly 1 argument, 2 given in /Users/agaly/Downloads/payment/static/static.php:65
+Stack trace:
+#0 /Users/agaly/Downloads/payment/static/static.php(65): ceil(1.3333333333333, 0)
+#1 {main}
+  thrown in /Users/agaly/Downloads/payment/static/static.php on line 65

@@ -26,4 +26,4 @@ if ($mysqli->connect_errno) {
    echo "Failed to connect to MySQL: " . $mysqli->connect_error;
    exit();
 }
-$mysqli->query('CREATE TABLE IF NOT EXISTS `payments`(id INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY,user_id VARCHAR(200) COLLATE utf8mb4_unicode_ci NOT NULL,page VARCHAR(30) COLLATE utf8mb4_unicode_ci NOT NULL,invoice_id VARCHAR(30) COLLATE utf8mb4_unicode_ci NOT NULL,status VARCHAR(30) COLLATE utf8mb4_unicode_ci NOT NULL,pay_url VARCHAR(200) COLLATE utf8mb4_unicode_ci NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci');
+$mysqli->query('CREATE TABLE IF NOT EXISTS `payments`(id INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY,user_id VARCHAR(200) COLLATE utf8mb4_unicode_ci NOT NULL,page VARCHAR(30) COLLATE utf8mb4_unicode_ci NOT NULL,invoice_id VARCHAR(30) COLLATE utf8mb4_unicode_ci NOT NULL,status VARCHAR(30) COLLATE utf8mb4_unicode_ci NOT NULL,pay_url VARCHAR(200) COLLATE utf8mb4_unicode_ci NOT NULL,sum integer(11) NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci');

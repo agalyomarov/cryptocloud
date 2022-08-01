@@ -1,0 +1,11 @@
+[01-Aug-2022 21:02:39 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci' at line 1 in /Users/agaly/Downloads/payment/config.php:29
+Stack trace:
+#0 /Users/agaly/Downloads/payment/config.php(29): mysqli->query('CREATE TABLE IF...')
+#1 /Users/agaly/Downloads/payment/index.php(12): require_once('/Users/agaly/Do...')
+#2 {main}
+  thrown in /Users/agaly/Downloads/payment/config.php on line 29
+[01-Aug-2022 21:03:02 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Field 'sum' doesn't have a default value in /Users/agaly/Downloads/payment/index.php:44
+Stack trace:
+#0 /Users/agaly/Downloads/payment/index.php(44): mysqli->query('INSERT INTO `pa...')
+#1 {main}
+  thrown in /Users/agaly/Downloads/payment/index.php on line 44

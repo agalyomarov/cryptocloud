@@ -49,7 +49,7 @@ if (!$row) {
     $response = json_decode($response->getBody()->getContents(), true);
     $invoice_id = $response['invoice_id'];
     $pay_url = $response['pay_url'];
-    $mysqli->query("INSERT INTO `payments`(`id`,`user_id`,`page`,`invoice_id`,`status`,`pay_url`) VALUES (NULL,'$uuid',$page,'$invoice_id','created','$pay_url')");
+    $mysqli->query("INSERT INTO `payments`(`id`,`user_id`,`page`,`invoice_id`,`status`,`pay_url`,`sum`) VALUES (NULL,'$uuid',$page,'$invoice_id','created','$pay_url','$sum')");
 } else {
     $response = $client->get('https://cryptocloud.plus/api/v2/invoice/status?uuid=' . $row['invoice_id'], [
         "headers" => [
