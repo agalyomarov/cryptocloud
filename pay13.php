@@ -13,10 +13,10 @@ require_once "config.php";
 
 use GuzzleHttp\Client;
 
-$next = "pay8.php";
-$page = 7;
-$prev_page = 6;
-$sum = $sum_7;
+$next = "pay14.php";
+$page = 13;
+$prev_page = 13;
+$sum = $sum_13;
 if (isset($_SESSION['uuid'])) {
     $uuid = $_SESSION['uuid'];
 } else {
@@ -76,8 +76,8 @@ if (!$row) {
     } else if ($response['status_invoice'] == 'paid') {
         $invoice_id = $row['invoice_id'];
         $mysqli->query("UPDATE `payments` SET `status`= 'paid' WHERE `user_id` = '$uuid' and `page` = $page and `invoice_id`='$invoice_id'");
-        header('Location:' . $next);
-        die();
+        // header('Location:' . $next);
+        // die();
     } else if ($response['status_invoice'] == 'created') {
         $pay_url = $row['pay_url'];
     }

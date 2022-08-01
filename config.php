@@ -1,7 +1,7 @@
 <?php
 $site_address = 'https://2c26-83-149-21-47.eu.ngrok.io';
-$token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MTkzOSwiZXhwIjo4ODA1OTI2ODExNn0.awqM_kQ2HI9Htb6qUHBYJxcN1Kciui8ckFDwTSz3aAg';
-$shop_id = 'TCgyCDNjhg9fzh7t';
+$token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MTU0OSwiZXhwIjo4ODA1NjkzMDA0M30.Xoo_OFxmcldzO4ICZwNs8eELzqABb85M4AcKJS6l75A';
+$shop_id = 'lpGLWjaT5sZcNFnW';
 $db_name = 'payment';
 $db_user = 'agaly';
 $db_pass = '1122';

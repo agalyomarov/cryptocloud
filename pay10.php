@@ -13,10 +13,10 @@ require_once "config.php";
 
 use GuzzleHttp\Client;
 
-$next = "pay8.php";
-$page = 7;
-$prev_page = 6;
-$sum = $sum_7;
+$next = "pay11.php";
+$page = 10;
+$prev_page = 9;
+$sum = $sum_10;
 if (isset($_SESSION['uuid'])) {
     $uuid = $_SESSION['uuid'];
 } else {

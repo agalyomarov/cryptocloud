@@ -4,6 +4,8 @@ ini_set("session.gc_divisor", "1");
 ini_set("session.gc_probability", "1");
 ini_set("session.cookie_lifetime", 864000);
 ini_set("session.save_path", 'sessions/');
+ini_set('log_errors', 'On');
+ini_set('error_log', 'php_errors.log');
 session_start();
 
 require_once "vendor/autoload.php";
@@ -51,7 +53,7 @@ if (!$row) {
 } else {
     $response = $client->get('https://cryptocloud.plus/api/v2/invoice/status?uuid=' . $row['invoice_id'], [
         "headers" => [
-            "Authorization" => "Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MTkzOSwiZXhwIjo4ODA1OTI2ODExNn0.awqM_kQ2HI9Htb6qUHBYJxcN1Kciui8ckFDwTSz3aAg"
+            "Authorization" => "Token " . $token
         ]
     ]);
     $response = json_decode($response->getBody()->getContents(), true);
@@ -72,7 +74,7 @@ if (!$row) {
         $mysqli->query("UPDATE `payments` SET `pay_url`= '$pay_url',`invoice_id`='$invoice_id' WHERE `user_id` = '$uuid' and `page` = $page");
         $result = $mysqli->query($query);
     } else if ($response['status_invoice'] == 'paid') {
-        $invoice_id = $response['invoice_id'];
+        $invoice_id = $row['invoice_id'];
         $mysqli->query("UPDATE `payments` SET `status`= 'paid' WHERE `user_id` = '$uuid' and `page` = $page and `invoice_id`='$invoice_id'");
         header('Location:' . $next);
         die();
