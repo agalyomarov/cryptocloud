@@ -1,0 +1,17 @@
+{
+    "name": "agaly/payment",
+    "autoload": {
+        "psr-4": {
+            "Agaly\\Payment\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Agaly Omarov",
+            "email": "97389793+agalyomarov@users.noreply.github.com"
+        }
+    ],
+    "require": {
+        "guzzlehttp/guzzle": "^7.4"
+    }
+}
